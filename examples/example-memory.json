@@ -1,0 +1,300 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-03-12T10:30:00Z",
+  "userProfile": {
+    "preferredLanguage": "zh-CN",
+    "codingStyle": "practical-first",
+    "communicationStyle": "direct-concise",
+    "customPreferences": [
+      {
+        "key": "frameworkPreference",
+        "value": "React over Vue for frontend",
+        "note": "Based on multiple project experiences"
+      },
+      {
+        "key": "testFramework",
+        "value": "pytest for Python, Jest for JavaScript",
+        "note": "Standard choices"
+      }
+    ]
+  },
+  "projectMemories": {
+    "C:\\Users\\15718\\Desktop\\deskpet": {
+      "type": "python-desktop-app",
+      "lastActive": "2026-03-10",
+      "techStack": ["Python", "PyQt5", "PyInstaller"],
+      "keyDecisions": [
+        {
+          "decision": "使用 PyQt5 作为 GUI 框架",
+          "reason": "跨平台支持好，文档完善",
+          "date": "2026-03-01"
+        },
+        {
+          "decision": "动画使用帧图片而非视频",
+          "reason": "更好的控制和更小的文件体积",
+          "date": "2026-03-05"
+        },
+        {
+          "decision": "使用 PyInstaller 打包",
+          "reason": "打包成单文件 exe，方便分发",
+          "date": "2026-03-08"
+        }
+      ],
+      "constraints": [
+        "需要打包成 exe",
+        "不支持商城、游戏功能",
+        "去除好感度系统",
+        "不支持背包功能"
+      ],
+      "characterSettings": {
+        "name": "年",
+        "personality": "活泼，四川人，ESTP",
+        "background": "一只来自四川的小精灵",
+        "catchphrases": [
+          "辣是种人生态度",
+          "哎呀，这个很简单的啦",
+          "安逸~"
+        ],
+        "customAttributes": {
+          "mbti": "ESTP",
+          "hometown": "四川",
+          "favoriteFood": "火锅"
+        }
+      },
+      "customContext": {
+        "animationStateMachine": {
+          "idle": "待机动画 - 角色静止或轻微晃动",
+          "wake": "唤醒动画 - 用户点击或交互时",
+          "awake": "醒着状态 - 可以交互",
+          "sleep": "入睡动画 - 长时间无操作",
+          "feed": "喂食动画 - 喂食时播放",
+          "remind": "提醒动画 - 有提醒事项时"
+        },
+        "projectGoal": "桌面宠物应用，可交互、有动画、支持提醒功能"
+      }
+    },
+    "C:\\Users\\15718\\Desktop\\my-website": {
+      "type": "frontend-web-app",
+      "lastActive": "2026-03-05",
+      "techStack": ["React", "TypeScript", "TailwindCSS", "Vite"],
+      "keyDecisions": [
+        {
+          "decision": "使用 Vite 作为构建工具",
+          "reason": "开发体验好，热更新快",
+          "date": "2026-02-20"
+        },
+        {
+          "decision": "TailwindCSS 作为 CSS 框架",
+          "reason": "快速开发，样式一致",
+          "date": "2026-02-20"
+        }
+      ],
+      "constraints": [
+        "需要支持移动端响应式",
+        "需要 SEO 优化"
+      ],
+      "customContext": {
+        "deploymentTarget": "Vercel",
+        "domain": "mywebsite.com"
+      }
+    },
+    "C:\\Users\\15718\\Desktop\\novel-project": {
+      "type": "creative-writing",
+      "lastActive": "2026-03-08",
+      "keyDecisions": [
+        {
+          "decision": "网文风格写作",
+          "reason": "目标读者群体偏好",
+          "date": "2026-03-01"
+        }
+      ],
+      "constraints": [
+        "每章 2000-3000 字",
+        "需要爽点和悬念",
+        "保持角色设定一致"
+      ],
+      "characterSettings": {
+        "name": "主角设定",
+        "personality": "聪明、果断、有正义感",
+        "background": "穿越者，带着现代知识",
+        "customAttributes": {
+          "genre": "玄幻穿越",
+          "powerSystem": "修仙体系"
+        }
+      },
+      "customContext": {
+        "writingStyle": "网文风格，注重爽点和节奏",
+        "chaptersWritten": 15,
+        "wordCountGoal": 100000
+      }
+    }
+  },
+  "learnedPatterns": [
+    {
+      "id": "pattern-python-packaging-001",
+      "pattern": "python-packaging",
+      "triggers": ["打包", "exe", "PyInstaller", "pack", "package"],
+      "context": {
+        "language": "Python",
+        "tool": "PyInstaller"
+      },
+      "recommendedAction": "使用 PyInstaller --noconsole 打包，打包后测试 exe 是否能正常运行",
+      "learnedFrom": "deskpet",
+      "confidence": 0.9,
+      "createdAt": "2026-03-10T08:00:00Z"
+    },
+    {
+      "id": "pattern-novel-writing-001",
+      "pattern": "novel-writing",
+      "triggers": ["继续", "扩写", "写第", "下一章", "继续写"],
+      "context": {
+        "style": "网文风格",
+        "requirements": ["爽点", "连贯", "跌宕起伏"]
+      },
+      "recommendedAction": "加载前文摘要，保持角色设定一致，注意章节结尾留悬念",
+      "learnedFrom": "novel-project",
+      "confidence": 0.85,
+      "createdAt": "2026-03-08T14:00:00Z"
+    },
+    {
+      "id": "pattern-ui-debug-001",
+      "pattern": "ui-debugging",
+      "triggers": ["显示不对", "布局问题", "样式错误", "UI 有问题"],
+      "context": {
+        "category": "frontend"
+      },
+      "recommendedAction": "检查 CSS 样式、布局计算逻辑，同时考虑所有相关元素",
+      "learnedFrom": "deskpet",
+      "confidence": 0.75,
+      "createdAt": "2026-03-10T10:00:00Z"
+    }
+  ],
+  "preferenceRules": [
+    {
+      "id": "rule-chinese-first-001",
+      "rule": "chinese-first",
+      "condition": "communication",
+      "action": "优先使用中文回复，除非用户使用英文提问",
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "id": "rule-python-packaging-001",
+      "rule": "provide-packaging-solution",
+      "condition": "Python desktop project",
+      "action": "提供打包成 exe 的方案，使用 PyInstaller --noconsole",
+      "priority": 5,
+      "enabled": true
+    },
+    {
+      "id": "rule-code-comments-001",
+      "rule": "minimal-comments",
+      "condition": "code writing",
+      "action": "代码注释精简，只在逻辑不明显时添加注释",
+      "priority": 3,
+      "enabled": true
+    }
+  ],
+  "iterativeWorkflows": {
+    "python-packaging": {
+      "name": "Python 打包流程",
+      "triggers": ["打包", "exe", "pack"],
+      "steps": [
+        "检查项目依赖（requirements.txt）",
+        "确认入口文件和资源文件",
+        "运行 PyInstaller --noconsole --onefile",
+        "测试生成的 exe 是否能正常运行",
+        "检查是否有缺失的依赖或资源"
+      ],
+      "commonIssues": [
+        {
+          "symptom": "出现命令窗口",
+          "solution": "添加 --noconsole 参数",
+          "learnedFrom": "deskpet 打包迭代"
+        },
+        {
+          "symptom": "打包失败 - 找不到模块",
+          "solution": "检查 PyInstaller spec 文件中的 hiddenimports",
+          "learnedFrom": "deskpet 打包迭代"
+        },
+        {
+          "symptom": "exe 运行时缺少资源文件",
+          "solution": "检查 --add-data 参数，确保资源文件被包含",
+          "learnedFrom": "deskpet 打包迭代"
+        }
+      ],
+      "learnedFrom": "deskpet 项目",
+      "iterations": 4,
+      "successRate": "high",
+      "lastUsed": "2026-03-10T09:00:00Z"
+    },
+    "ui-adjustment": {
+      "name": "UI 调整流程",
+      "triggers": ["调整", "距离", "间距", "布局", "位置"],
+      "steps": [
+        "同时考虑所有相关 UI 元素",
+        "检查布局计算逻辑是否正确",
+        "调整后验证显示效果",
+        "如果涉及功能变更，打包测试"
+      ],
+      "commonIssues": [
+        {
+          "symptom": "调整后还是不对",
+          "solution": "深入检查布局计算逻辑，可能是相对位置计算错误"
+        },
+        {
+          "symptom": "调整后其他元素位置也变了",
+          "solution": "检查布局管理器的约束，可能需要固定其他元素的位置"
+        }
+      ],
+      "learnedFrom": "deskpet 项目",
+      "iterations": 3,
+      "successRate": "high",
+      "lastUsed": "2026-03-10T11:00:00Z"
+    },
+    "feature-implementation": {
+      "name": "功能实现流程",
+      "triggers": ["实现", "添加功能", "新功能"],
+      "steps": [
+        "明确功能需求",
+        "设计实现方案",
+        "编写代码",
+        "测试功能",
+        "处理边界情况"
+      ],
+      "commonIssues": [
+        {
+          "symptom": "功能不符合预期",
+          "solution": "重新确认需求，可能理解有偏差"
+        }
+      ],
+      "learnedFrom": "deskpet 项目",
+      "iterations": 5,
+      "successRate": "medium"
+    }
+  },
+  "sessionContexts": [
+    {
+      "sessionId": "session-deskpet-20260310",
+      "project": "C:\\Users\\15718\\Desktop\\deskpet",
+      "summary": "UI 布局调整和打包测试",
+      "lastTask": "调整宠物图片、气泡和输入框之间的间距",
+      "status": "completed",
+      "timestamp": "2026-03-10T12:00:00Z"
+    },
+    {
+      "sessionId": "session-novel-20260308",
+      "project": "C:\\Users\\15718\\Desktop\\novel-project",
+      "summary": "小说第 15 章写作",
+      "lastTask": "完成第 15 章，留下悬念",
+      "status": "completed",
+      "timestamp": "2026-03-08T18:00:00Z"
+    }
+  ],
+  "metadata": {
+    "totalLearnedItems": 12,
+    "learningSessions": 3,
+    "createdAt": "2026-03-01T00:00:00Z",
+    "notes": "Initial memory file with examples from deskpet and novel projects"
+  }
+}

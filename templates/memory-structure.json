@@ -1,0 +1,297 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Remember Me Memory Structure",
+  "description": "Memory storage structure for Remember Me skill",
+  "type": "object",
+  "required": ["version", "lastUpdated"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Memory format version",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "default": "1.0.0"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of last update"
+    },
+    "userProfile": {
+      "type": "object",
+      "description": "General user preferences and profile",
+      "properties": {
+        "preferredLanguage": {
+          "type": "string",
+          "description": "User's preferred language for communication",
+          "enum": ["zh-CN", "en-US", "ja-JP", "ko-KR", "auto"],
+          "default": "auto"
+        },
+        "codingStyle": {
+          "type": "string",
+          "description": "User's preferred coding style",
+          "enum": ["practical-first", "clean-code", "performance-first", "readability-first"],
+          "default": "practical-first"
+        },
+        "communicationStyle": {
+          "type": "string",
+          "description": "User's preferred communication style",
+          "enum": ["direct-concise", "detailed-explanatory", "friendly-casual", "formal-professional"],
+          "default": "direct-concise"
+        },
+        "customPreferences": {
+          "type": "array",
+          "description": "Custom user preferences",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": { "type": "string" },
+              "value": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "projectMemories": {
+      "type": "object",
+      "description": "Project-specific memories keyed by project path",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["lastActive"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Project type classification"
+          },
+          "lastActive": {
+            "type": "string",
+            "format": "date",
+            "description": "Last active date"
+          },
+          "techStack": {
+            "type": "array",
+            "description": "Technologies used in this project",
+            "items": { "type": "string" }
+          },
+          "keyDecisions": {
+            "type": "array",
+            "description": "Important technical decisions made",
+            "items": {
+              "type": "object",
+              "properties": {
+                "decision": { "type": "string" },
+                "reason": { "type": "string" },
+                "date": { "type": "string", "format": "date" }
+              }
+            }
+          },
+          "constraints": {
+            "type": "array",
+            "description": "Project constraints and limitations",
+            "items": { "type": "string" }
+          },
+          "characterSettings": {
+            "type": "object",
+            "description": "Character/role settings for creative projects",
+            "properties": {
+              "name": { "type": "string" },
+              "personality": { "type": "string" },
+              "background": { "type": "string" },
+              "catchphrases": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "customAttributes": {
+                "type": "object",
+                "additionalProperties": { "type": "string" }
+              }
+            }
+          },
+          "customContext": {
+            "type": "object",
+            "description": "Custom project-specific context",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "learnedPatterns": {
+      "type": "array",
+      "description": "Patterns learned from user interactions",
+      "items": {
+        "type": "object",
+        "required": ["pattern", "triggers"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this pattern"
+          },
+          "pattern": {
+            "type": "string",
+            "description": "Pattern name/type"
+          },
+          "triggers": {
+            "type": "array",
+            "description": "Keywords that trigger this pattern",
+            "items": { "type": "string" }
+          },
+          "context": {
+            "type": "object",
+            "description": "Context where this pattern applies",
+            "additionalProperties": { "type": "string" }
+          },
+          "recommendedAction": {
+            "type": "string",
+            "description": "Recommended action when pattern is detected"
+          },
+          "learnedFrom": {
+            "type": "string",
+            "description": "Source project where this was learned"
+          },
+          "confidence": {
+            "type": "number",
+            "description": "Confidence level (0-1)",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 0.5
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "preferenceRules": {
+      "type": "array",
+      "description": "Rules for applying user preferences",
+      "items": {
+        "type": "object",
+        "required": ["rule", "condition", "action"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier"
+          },
+          "rule": {
+            "type": "string",
+            "description": "Rule name"
+          },
+          "condition": {
+            "type": "string",
+            "description": "Condition when this rule applies"
+          },
+          "action": {
+            "type": "string",
+            "description": "Action to take"
+          },
+          "priority": {
+            "type": "number",
+            "description": "Rule priority (higher = more important)",
+            "default": 0
+          },
+          "enabled": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      }
+    },
+    "iterativeWorkflows": {
+      "type": "object",
+      "description": "Workflows learned from iterative processes",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["name", "triggers", "steps"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Workflow name"
+          },
+          "triggers": {
+            "type": "array",
+            "description": "Keywords that trigger this workflow",
+            "items": { "type": "string" }
+          },
+          "steps": {
+            "type": "array",
+            "description": "Standard workflow steps",
+            "items": { "type": "string" }
+          },
+          "commonIssues": {
+            "type": "array",
+            "description": "Common issues and their solutions",
+            "items": {
+              "type": "object",
+              "properties": {
+                "symptom": { "type": "string" },
+                "solution": { "type": "string" },
+                "learnedFrom": { "type": "string" }
+              }
+            }
+          },
+          "learnedFrom": {
+            "type": "string",
+            "description": "Source project"
+          },
+          "iterations": {
+            "type": "number",
+            "description": "Number of iterations used to learn this workflow",
+            "minimum": 1
+          },
+          "successRate": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "default": "medium"
+          },
+          "lastUsed": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "sessionContexts": {
+      "type": "array",
+      "description": "Recent session contexts for quick resumption",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sessionId": { "type": "string" },
+          "project": { "type": "string" },
+          "summary": { "type": "string" },
+          "lastTask": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["completed", "in-progress", "paused"]
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata",
+      "properties": {
+        "totalLearnedItems": {
+          "type": "number",
+          "default": 0
+        },
+        "learningSessions": {
+          "type": "number",
+          "default": 0
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
